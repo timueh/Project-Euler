@@ -1,7 +1,8 @@
 """
 # ProjectEuler.net - Problem 11
 
-In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+In the 20×20 grid below, four numbers along a diagonal line have been marked
+in red.
 
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -26,14 +27,16 @@ In the 20×20 grid below, four numbers along a diagonal line have been marked in
 
 The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
-What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
+What is the greatest product of four adjacent numbers in the same direction
+(up, down, left, right, or diagonally) in the 20×20 grid?
 
 """
 import numpy as np
 
+
 def find_largest_product(x, size):
-    value, l = 0, len(x)
-    for i in range(0, l - size + 1):
+    value = 0
+    for i in range(0, len(x) - size + 1):
         product = np.prod(x[i:i+size])
         value = max(value, product)
     return value
